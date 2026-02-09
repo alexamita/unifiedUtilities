@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Utilities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="authPageWrapper">
+        <!-- Left Side: Visual -->
+        <div class="authLeftSide">
+            <div class="authVisualOverlay"></div>
+            <img class="authPageImg" src="assets/buildingnrb1.jpg" alt="Building">
+
+            <div class="contentLeftSide">
+                <div class="logo">
+                    <div class="logoIcon">
+                        <i data-lucide="bolt"></i>
+                    </div>
+                    <span>Unified Utilities</span>
+                </div>
+                <div class="heroBlockText">
+                    <h1>SMART UTILITY<br><span class="textHighlight">MANAGEMENT.</span></h1>
+                    <p>Manage your electricity and water bills from one simple dashboard.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side: Form -->
+        <div class="authRightFormSide">
+            <div class="authRightInner">
+                <!-- Top Nav -->
+                <div class="authTopCluster">
+                    <a href="index.html" class="backLink">
+                        <i data-lucide="chevron-left"></i>
+                        BACK TO HOME
+                    </a>
+                    <div class="roleSwitcher">
+                        <button class="roleButton active" id="buttonTenant" onclick="setRole('tenant')">TENANT</button>
+                        <button class="roleButton" id="buttonManager" onclick="setRole('manager')">PROPERTY
+                            MANAGER</button>
+                    </div>
+                </div>
+                <!-- Header -->
+                <div class="authHeader">
+                    <h2 id="loginTitle">CREATE YOUR FREE ACCOUNT</h2>
+                    <p id="loginSubtitle">Join the Unified Utilities platform to simplify your utility payments.</p>
+                </div>
+
+                <!-- Form -->
+                <form action="dashboard.html" class="loginForm">
+                    <!-- Names Row -->
+                    <div class="formRow">
+                        <div class="formGroup">
+                            <label class="inputLabel">FIRST NAME</label>
+                            <div class="inputWrapper">
+                                <input type="text" class="customInput noIcon" placeholder="Jane" required>
+                            </div>
+                        </div>
+                        <div class="formGroup">
+                            <label class="inputLabel">LAST NAME</label>
+                            <div class="inputWrapper">
+                                <input type="text" class="customInput noIcon" placeholder="Doe" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="formGroup" id="groupEmail">
+                        <label class="inputLabel">EMAIL ADDRESS</label>
+                        <div class="inputWrapper">
+                            <i data-lucide="mail" class="inputIcon"></i>
+                            <input type="email" class="customInput" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+
+                    <!-- Phone Field (Hidden) -->
+                    <div class="formGroup" id="groupPhone">
+                        <label class="inputLabel">PHONE NUMBER</label>
+                        <div class="inputWrapper">
+                            <i data-lucide="phone" class="inputIcon"></i>
+                            <input type="tel" class="customInput" placeholder="+254 700 000 000">
+                        </div>
+                    </div>
+
+                    <!-- Password Row -->
+                    <div class="formRow">
+                        <div class="formGroup">
+                            <label class="inputLabel">CREATE PASSWORD</label>
+                            <div class="inputWrapper">
+                                <i data-lucide="lock" class="inputIcon"></i>
+                                <input type="password" class="customInput" placeholder="••••••••" required>
+                                <button type="button" class="passwordToggle" onclick="togglePassword(this)"
+                                    aria-label="Toggle password visibility">
+                                    <i data-lucide="eye" class="icon-eye"></i>
+                                    <i data-lucide="eye-off" class="icon-eye-off icon-hidden"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="formGroup">
+                            <label class="inputLabel">CONFIRM PASSWORD</label>
+                            <div class="inputWrapper">
+                                <i data-lucide="lock" class="inputIcon"></i>
+                                <input type="password" class="customInput" placeholder="••••••••" required>
+                                <button type="button" class="passwordToggle" onclick="togglePassword(this)"
+                                    aria-label="Toggle password visibility">
+                                    <i data-lucide="eye" class="icon-eye"></i>
+                                    <i data-lucide="eye-off" class="icon-eye-off icon-hidden"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="button">CREATE MY ACCOUNT</button>
+                </form>
+
+                <div class="dividerText">
+                    OR CONTINUE WITH
+                </div>
+
+                <!-- sign up with google/facebook buttons -->
+                <div class="socialLoginGrid">
+                    <button class="socialAuthButton">
+                        <!-- Google Icon -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="matrix(1, 0, 0, 1, 27.009001, -39.238998)">
+                                <path fill="#4285F4"
+                                    d="M -3.264 51.509 C -3.264 50.719 -3.334 49.969 -3.454 49.239 L -14.754 49.239 L -14.754 53.749 L -8.284 53.749 C -8.574 55.229 -9.424 56.479 -10.684 57.329 L -10.684 60.329 L -6.824 60.329 C -4.564 58.239 -3.264 55.159 -3.264 51.509 Z" />
+                                <path fill="#34A853"
+                                    d="M -14.754 63.239 C -11.514 63.239 -8.804 62.159 -6.824 60.329 L -10.684 57.329 C -11.764 58.049 -13.134 58.489 -14.754 58.489 C -17.884 58.489 -20.534 56.379 -21.484 53.529 L -25.464 53.529 L -25.464 56.619 C -23.494 60.539 -19.444 63.239 -14.754 63.239 Z" />
+                                <path fill="#FBBC05"
+                                    d="M -21.484 53.529 C -21.734 52.809 -21.864 52.039 -21.864 51.239 C -21.864 50.439 -21.734 49.669 -21.484 48.949 L -21.484 45.859 L -25.464 45.859 C -26.284 47.479 -26.754 49.299 -26.754 51.239 C -26.754 53.179 -26.284 54.999 -25.464 56.619 L -21.484 53.529 Z" />
+                                <path fill="#EA4335"
+                                    d="M -14.754 43.989 C -12.984 43.989 -11.424 44.599 -10.174 45.799 L -6.744 42.369 C -8.804 40.449 -11.514 39.239 -14.754 39.239 C -19.444 39.239 -23.494 41.939 -25.464 45.859 L -21.484 48.949 C -20.534 46.099 -17.884 43.989 -14.754 43.989 Z" />
+                            </g>
+                        </svg>
+                        GOOGLE
+                    </button>
+                    <button class="socialAuthButton">
+                        <!-- Facebook Icon -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#1877F2"
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                        FACEBOOK
+                    </button>
+                </div>
+
+                <div class="signupFooter centered">
+                    <a href="login.html" class="signupLink">ALREADY HAVE AN ACCOUNT? LOG IN</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Check for URL param ?role=manager
+        const urlParams = new URLSearchParams(window.location.search);
+        const roleParam = urlParams.get('role');
+        if (roleParam === 'manager') {
+            setRole('manager');
+        }
+
+        function setRole(role) {
+            // Update Toggle UI
+            document.querySelectorAll('.roleButton').forEach(button => button.classList.remove('active'));
+            const buttonId = 'button' + role.charAt(0).toUpperCase() + role.slice(1);
+            document.getElementById(buttonId).classList.add('active');
+
+            // Toggle Manager Theme
+            const wrapper = document.querySelector('.authPageWrapper');
+            if (role === 'manager') {
+                wrapper.classList.add('themeManager');
+                document.getElementById('signupTitle').innerText = 'CREATE ACCOUNT';
+                document.getElementById('signupSubtitle').innerText = 'Join the platform to streamline property management.';
+            } else {
+                wrapper.classList.remove('themeManager');
+                document.getElementById('signupTitle').innerText = 'CREATE ACCOUNT';
+                document.getElementById('signupSubtitle').innerText = 'Join the unified platform to simplify your utility payments.';
+            }
+
+            // Clear all form inputs
+            const form = document.querySelector('form');
+            if (form) {
+                form.reset();
+            }
+        }
+
+        function togglePassword(btn) {
+            const inputWrapper = btn.parentElement;
+            const input = inputWrapper.querySelector('input');
+            const eye = btn.querySelector('.icon-eye');
+            const eyeOff = btn.querySelector('.icon-eye-off');
+
+            if (input.type === 'password') {
+                input.type = 'text';
+                eye.classList.add('icon-hidden');
+                eyeOff.classList.remove('icon-hidden');
+            } else {
+                input.type = 'password';
+                eye.classList.remove('icon-hidden');
+                eyeOff.classList.add('icon-hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,578 @@
+/* Base Styles & Typography */
+:root {
+    /* Color Palette */
+    --primary: #2563eb;
+    /* For primary buttons and accents */
+    --primary-hover: #1d4ed8;
+    /* For hover states and accents */
+    --secondary: #0f172a;
+    /* For text and primary elements */
+    --slate-50: #f8fafc;
+    /* For light backgrounds and card backgrounds */
+    --slate-100: #f1f5f9;
+    /* For light backgrounds and subtle borders */
+    --slate-200: #e2e8f0;
+    /* For borders and backgrounds */
+    --slate-400: #94a3b8;
+    /* For borders and subtle text on light backgrounds */
+    --slate-500: #64748b;
+    /* For secondary text and muted elements */
+    --slate-600: #475569;
+    /* For text and borders on light backgrounds */
+    --white: #ffffff;
+    /* For light backgrounds and text */
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    /* For card default state */
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    /* For card hover effect */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* To ensure padding and borders are included in element's total width and height */
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* main layout container */
+.authPageWrapper {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background: var(--white);
+}
+
+/* Left Side - Visual */
+.authLeftSide {
+    width: 50%;
+    position: relative;
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+    overflow: hidden;
+    color: var(--white);
+}
+
+.authPageImg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover;
+    opacity: 1;
+    mix-blend-mode: normal;
+}
+
+/* Image blur overlay on authentication page */
+.authVisualOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.6));
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.authLeftSide .authVisualOverlay {
+    margin: 8px;
+}
+
+.contentLeftSide {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Logo on Visual Side */
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.logoIcon {
+    background: #4b5563;
+    border: none;
+    border-radius: 14px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.logoIcon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2.5;
+    color: var(--white);
+}
+
+.heroBlockText {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.heroBlockText h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.textHighlight {
+    color: #3b82f6;
+    display: block;
+}
+
+/* Right Side - Form */
+.authRightFormSide {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+    background: #c4cfdd;
+}
+
+.authRightInner {
+    width: 100%;
+    /* max-width: 440px; */
+    max-width: 480px;
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    min-height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--slate-100);
+}
+
+/* Top Navigation Cluster */
+.authTopCluster {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.backLink {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--slate-500);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+}
+
+.backLink:hover {
+    color: var(--secondary);
+}
+
+.backLink svg {
+    width: 14px;
+    height: 14px;
+}
+
+.roleSwitcher {
+    background: var(--slate-100);
+    padding: 4px;
+    border-radius: 12px;
+    display: flex;
+    gap: 4px;
+}
+
+.roleButton {
+    border: none;
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--slate-500);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.05em;
+}
+
+.roleButton:hover {
+    color: var(--secondary);
+}
+
+.roleButton.active {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Form Header */
+.authHeader {
+    margin-bottom: 1rem;
+}
+
+.authHeader h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+    letter-spacing: -0.02em;
+}
+
+.authHeader p {
+    color: var(--slate-500);
+    font-weight: 400;
+}
+
+/* Method Tabs (Email/Phone) */
+.methodTabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1rem;
+    background: var(--slate-100);
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.methodTab {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--slate-500);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.methodTab.active {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Groups */
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.formRow {
+    display: flex;
+    gap: 1rem;
+}
+
+.formRow .formGroup {
+    flex: 1;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputLabel {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--slate-400);
+    letter-spacing: 0.05em;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 16px;
+    width: 18px;
+    height: 18px;
+    color: var(--slate-400);
+    pointer-events: none;
+}
+
+.customInput {
+    width: 100%;
+    padding: 10px 16px 10px 48px;
+    background: var(--slate-50);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--secondary);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.customInput.noIcon {
+    padding-left: 16px;
+}
+
+.customInput:hover {
+    background: #f8fafc;
+    border-color: var(--slate-200);
+}
+
+.customInput:focus {
+    background: var(--white);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.passwordToggle {
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+    color: var(--slate-400);
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    z-index: 10;
+}
+
+.passwordToggle:hover {
+    color: var(--secondary);
+}
+
+.passwordToggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-hidden {
+    display: none !important;
+}
+
+.customInput[type="password"],
+.customInput.password-field {
+    padding-right: 40px;
+}
+
+.forgotWrapper {
+    text-align: right;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.forgotPassLink {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+/* CTA Button */
+.button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 1rem;
+    background: var(--primary);
+    color: white;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(29, 78, 216, 0.2);
+}
+
+.button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px -1px rgba(29, 78, 216, 0.3);
+}
+
+/* Divider */
+.dividerText {
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: var(--slate-300);
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dividerText::before,
+.dividerText::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--slate-100);
+    margin: 0 1rem;
+}
+
+/* Social Login */
+.socialLoginGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.socialAuthButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    background: var(--white);
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.socialAuthButton:hover {
+    background: var(--slate-50);
+    border-color: var(--slate-300);
+}
+
+.socialAuthButton img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Footer Link */
+.signupFooter {
+    text-align: center;
+}
+
+.signupLink {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.signupLink:hover {
+    color: #1d4ed8;
+}
+
+/* Theme Override for Manager */
+.authPageWrapper.themeManager .button {
+    background: var(--secondary);
+    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.2);
+}
+
+.authPageWrapper.themeManager .button:hover {
+    background: #1e293b;
+    box-shadow: 0 6px 10px -1px rgba(15, 23, 42, 0.3);
+}
+
+.authPageWrapper.themeManager .methodTab.active {
+    color: var(--secondary);
+}
+
+.authPageWrapper.themeManager .customInput:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
+}
+
+.authPageWrapper.themeManager .forgotPassLink,
+.authPageWrapper.themeManager .signupLink {
+    color: var(--secondary);
+}
+
+.authPageWrapper.themeManager .signupLink:hover {
+    text-decoration: underline;
+}
+
+.authPageWrapper.themeManager .heroBadgeText {
+    color: var(--secondary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .authPageWrapper {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .authLeftSide {
+        display: none;
+        /* Hide visual on tablet/mobile */
+    }
+
+    .contentLeftSide {
+        display: none;
+        /* Also hide branding text on mobile to prevent overlap */
+    }
+
+    .authRightFormSide {
+        width: 100%;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroBlockText h1 {
+        font-size: 2.5rem;
+        /* Smaller font on mobile */
+    }
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
