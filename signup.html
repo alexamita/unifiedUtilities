@@ -8,11 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-    <div class="authPageWrapper">
+    <div class="authPageWrapper" id="signUp">
         <!-- Left Side: Visual -->
         <div class="authLeftSide">
             <div class="authVisualOverlay"></div>
@@ -49,8 +50,8 @@
                 </div>
                 <!-- Header -->
                 <div class="authHeader">
-                    <h2 id="loginTitle">CREATE YOUR FREE ACCOUNT</h2>
-                    <p id="loginSubtitle">Join the Unified Utilities platform to simplify your utility payments.</p>
+                    <h2 id="signUpTitle">CREATE YOUR TENANT ACCOUNT</h2>
+                    <p id="signUpSubtitle">Join Unified Utilities to simplify your utility payments.</p>
                 </div>
 
                 <!-- Form -->
@@ -118,7 +119,6 @@
                     </div>
 
                     <button type="submit" class="button">CREATE MY ACCOUNT</button>
-                    <p class="legal">By registering for an account, you are consenting to our <a href="terms.html">Terms of Service</a> and confirming that you have reviewed and accepted our <a href="privacy.html">Privacy Policy</a>. </p>
                 </form>
 
                 <div class="dividerText">
@@ -157,62 +157,13 @@
                     <a href="login.html" class="signupLink">ALREADY HAVE AN ACCOUNT? LOG IN</a>
                 </div>
 
+                <p class="legal">By registering for an account, you are consenting to our <a href="terms.html">Terms of Service</a> and confirming that you have reviewed and accepted our <a href="privacy.html">Privacy Policy</a>. </p>
             </div>
         </div>
     </div>
 
     <script>
         lucide.createIcons();
-
-        // Check for URL param ?role=manager
-        const urlParams = new URLSearchParams(window.location.search);
-        const roleParam = urlParams.get('role');
-        if (roleParam === 'manager') {
-            setRole('manager');
-        }
-
-        function setRole(role) {
-            // Update Toggle UI
-            document.querySelectorAll('.roleButton').forEach(button => button.classList.remove('active'));
-            const buttonId = 'button' + role.charAt(0).toUpperCase() + role.slice(1);
-            document.getElementById(buttonId).classList.add('active');
-
-            // Toggle Manager Theme
-            const wrapper = document.querySelector('.authPageWrapper');
-            if (role === 'manager') {
-                wrapper.classList.add('themeManager');
-                document.getElementById('signupTitle').innerText = 'CREATE ACCOUNT';
-                document.getElementById('signupSubtitle').innerText = 'Join the platform to streamline property management.';
-            } else {
-                wrapper.classList.remove('themeManager');
-                document.getElementById('signupTitle').innerText = 'CREATE ACCOUNT';
-                document.getElementById('signupSubtitle').innerText = 'Join the unified platform to simplify your utility payments.';
-            }
-
-            // Clear all form inputs
-            const form = document.querySelector('form');
-            if (form) {
-                form.reset();
-            }
-        }
-
-        function togglePassword(button) {
-            const inputWrapper = button.parentElement;
-            const input = inputWrapper.querySelector('input');
-            const eye = button.querySelector('.icon-eye');
-            const eyeOff = button.querySelector('.icon-eye-off');
-
-            if (input.type === 'password') {
-                input.type = 'text';
-                eye.classList.add('icon-hidden');
-                eyeOff.classList.remove('icon-hidden');
-            } else {
-                input.type = 'password';
-                eye.classList.remove('icon-hidden');
-                eyeOff.classList.add('icon-hidden');
-            }
-        }
     </script>
 </body>
-
 </html>

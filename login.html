@@ -8,11 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-    <div class="authPageWrapper">
+    <div class="authPageWrapper" id="logIn">
         <!-- Left Side: Visual -->
         <div class="authLeftSide">
             <div class="authVisualOverlay"></div>
@@ -52,7 +53,7 @@
                     <h2 id="loginTitle">TENANT LOGIN</h2>
                     <p id="loginSubtitle">Welcome back! Sign in to manage your utilities.</p>
                 </div>
-                <!-- Method Tabs -->
+                <!-- Method Tabs (Email or Phone Number)  -->
                 <div class="methodTabs">
                     <button class="methodTab active" id="tabEmail" onclick="setMethod('email')">EMAIL</button>
                     <button class="methodTab" id="tabPhone" onclick="setMethod('phone')">PHONE</button>
@@ -133,75 +134,6 @@
     </div>
     <script>
         lucide.createIcons();
-
-        // Check for URL param ?role=manager
-        const urlParams = new URLSearchParams(window.location.search);
-        const roleParam = urlParams.get('role');
-        if (roleParam === 'manager') {
-            setRole('manager');
-        }
-        // Function to set the role
-        function setRole(role) {
-            document.querySelectorAll('.roleButton').forEach(button => button.classList.remove('active'));
-            const buttonId = 'button' + role.charAt(0).toUpperCase() + role.slice(1);
-            document.getElementById(buttonId).classList.add('active');
-
-            // Toggle Manager Theme
-            const wrapper = document.querySelector('.authPageWrapper');
-
-            if (role === 'manager') {
-                wrapper.classList.add('themeManager');
-                document.getElementById('loginTitle').innerText = 'MANAGER LOGIN';
-                document.getElementById('loginSubtitle').innerText = 'Welcome back! Sign in to manage your properties.';
-            } else {
-                wrapper.classList.remove('themeManager');
-                document.getElementById('loginTitle').innerText = 'TENANT LOGIN';
-                document.getElementById('loginSubtitle').innerText = 'Welcome back! Sign in to manage your utilities.';
-            }
-
-        }
-
-        function togglePassword(button) {
-            const inputWrapper = button.parentElement;
-            const input = inputWrapper.querySelector('input');
-            const eye = button.querySelector('.icon-eye');
-            const eyeOff = button.querySelector('.icon-eye-off');
-
-            if (input.type === 'password') {
-                input.type = 'text';
-                eye.classList.add('icon-hidden');
-                eyeOff.classList.remove('icon-hidden');
-            } else {
-                input.type = 'password';
-                eye.classList.remove('icon-hidden');
-                eyeOff.classList.add('icon-hidden');
-            }
-        }
-        // Function to set the method
-        function setMethod(method) {
-            document.querySelectorAll('.methodTab').forEach(tab => tab.classList.remove('active'));
-            const tabId = 'tab' + method.charAt(0).toUpperCase() + method.slice(1);
-            document.getElementById(tabId).classList.add('active');
-
-            // Show/Hide Fields
-            if (method === 'email') {
-                document.getElementById('groupEmail').classList.remove('hidden');
-                document.getElementById('groupPhone').classList.add('hidden');
-
-                // Toggle Required
-                document.querySelector('#groupEmail input').setAttribute('required', '');
-                document.querySelector('#groupPhone input').removeAttribute('required');
-            } else {
-                document.getElementById('groupEmail').classList.add('hidden');
-                document.getElementById('groupPhone').classList.remove('hidden');
-
-                // Toggle Required
-                document.querySelector('#groupEmail input').removeAttribute('required');
-                document.querySelector('#groupPhone input').setAttribute('required', '');
-            }
-        }
     </script>
-
 </body>
-
 </html>

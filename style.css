@@ -156,7 +156,7 @@
 
 .authRightInner {
     width: 100%;
-    max-width: 480px;
+    max-width: 560px;
     background: var(--white);
     padding: 3rem 2.5rem;
     min-height: 800px;
@@ -428,11 +428,7 @@
     box-shadow: 0 6px 10px -1px rgba(29, 78, 216, 0.3);
 }
 
-.legal{
-    color: var(--slate-400);
-    font-size: smaller;
-    margin-top: 12px;
-}
+
 /* Divider */
 .dividerText {
     text-align: center;
@@ -511,38 +507,45 @@
 
 .signupLink:hover {
     color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.legal{
+    color: var(--slate-400);
+    font-size: smaller;
+    margin-top: 24px;
 }
 
 /* Theme Override for Manager */
-.authPageWrapper.themeManager .button {
+.authPageWrapper.managerTheme .button {
     background: var(--secondary);
     box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.2);
 }
 
-.authPageWrapper.themeManager .button:hover {
+.authPageWrapper.managerTheme .button:hover {
     background: #1e293b;
     box-shadow: 0 6px 10px -1px rgba(15, 23, 42, 0.3);
 }
 
-.authPageWrapper.themeManager .methodTab.active {
+.authPageWrapper.managerTheme .roleButton.active {
     color: var(--secondary);
 }
 
-.authPageWrapper.themeManager .customInput:focus {
+.authPageWrapper.managerTheme .methodTab.active {
+    color: var(--secondary);
+}
+
+.authPageWrapper.managerTheme .customInput:focus {
     border-color: var(--secondary);
     box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
 }
 
-.authPageWrapper.themeManager .forgotPassLink,
-.authPageWrapper.themeManager .signupLink {
+.authPageWrapper.managerTheme .forgotPassLink,
+.authPageWrapper.managerTheme .signupLink {
     color: var(--secondary);
 }
 
-.authPageWrapper.themeManager .signupLink:hover {
-    text-decoration: underline;
-}
-
-.authPageWrapper.themeManager .heroBadgeText {
+.authPageWrapper.managerTheme {
     color: var(--secondary);
 }
 
