@@ -161,11 +161,11 @@
 
         }
 
-        function togglePassword(btn) {
-            const inputWrapper = btn.parentElement;
+        function togglePassword(button) {
+            const inputWrapper = button.parentElement;
             const input = inputWrapper.querySelector('input');
-            const eye = btn.querySelector('.icon-eye');
-            const eyeOff = btn.querySelector('.icon-eye-off');
+            const eye = button.querySelector('.icon-eye');
+            const eyeOff = button.querySelector('.icon-eye-off');
 
             if (input.type === 'password') {
                 input.type = 'text';

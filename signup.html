@@ -118,6 +118,7 @@
                     </div>
 
                     <button type="submit" class="button">CREATE MY ACCOUNT</button>
+                    <p class="legal">By registering for an account, you are consenting to our <a href="terms.html">Terms of Service</a> and confirming that you have reviewed and accepted our <a href="privacy.html">Privacy Policy</a>. </p>
                 </form>
 
                 <div class="dividerText">
@@ -195,11 +196,11 @@
             }
         }
 
-        function togglePassword(btn) {
-            const inputWrapper = btn.parentElement;
+        function togglePassword(button) {
+            const inputWrapper = button.parentElement;
             const input = inputWrapper.querySelector('input');
-            const eye = btn.querySelector('.icon-eye');
-            const eyeOff = btn.querySelector('.icon-eye-off');
+            const eye = button.querySelector('.icon-eye');
+            const eyeOff = button.querySelector('.icon-eye-off');
 
             if (input.type === 'password') {
                 input.type = 'text';
