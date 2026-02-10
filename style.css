@@ -510,7 +510,7 @@
     text-decoration: underline;
 }
 
-.legal{
+.legal {
     color: var(--slate-400);
     font-size: smaller;
     margin-top: 24px;
@@ -540,8 +540,7 @@
     box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
 }
 
-.authPageWrapper.managerTheme .forgotPassLink,
-.authPageWrapper.managerTheme .signupLink {
+.authPageWrapper.managerTheme .forgotPassLink {
     color: var(--secondary);
 }
 
@@ -580,7 +579,511 @@
     }
 }
 
-/* Utility Classes */
+/* Utility class to hide elements, used for toggling between login and register forms */
 .hidden {
     display: none !important;
+}
+
+/* LANDING PAGE */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--secondary);
+    line-height: 1.5;
+    background-color: var(--slate-100);
+}
+
+/* Container for hero section to limit width and center content */
+.contentContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* NAVBAR */
+.navBar {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 1rem;
+    z-index: 100;
+    padding: 0 2rem;
+
+    /* Floating Glassy Effect */
+    background: rgba(248, 250, 252, 0.65);
+    /* Matches slate-50 */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 24px;
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.navContentContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo icon & Logo text */
+.siteLogo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+
+
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary);
+    letter-spacing: -0.060em;
+}
+
+.spacer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: var(--slate-600);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: -0.040em;
+    transition: color 0.2s;
+}
+
+.navLinks a:hover {
+    color: var(--primary);
+}
+
+/* BUTTONS */
+/* Base button styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+/* Landing page button styles */
+.btnOutline {
+    border: 1px solid var(--slate-200);
+    color: var(--white);
+    background: black;
+    border-radius: 20px;
+}
+
+.btnOutline:hover {
+    transform: scale(1.1);
+}
+
+/* Utility class to make an element full width in its parent container */
+.w-full {
+    width: 100%;
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 5rem 0;
+    background: transparent;
+}
+
+.heroBadgeIcon {
+    width: 20px;
+    height: 20px;
+    color: var(--primary);
+}
+
+.heroBadgeText {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-left: 0.5rem;
+}
+
+.prototypeBadge {
+    display: inline-flex;
+    align-items: center;
+    background: #e0f2fe;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    margin-bottom: 1.5rem;
+}
+
+.heroContent {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.heroTitle {
+    font-size: 3.8rem;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.05em;
+}
+
+.heroTitleNewline {
+    display: block;
+    color: var(--primary);
+}
+
+.heroSubtitle {
+    font-size: 1.3rem;
+    color: var(--slate-500);
+    font-weight: 300;
+}
+
+/* CARDS GRID */
+.cardsGrid {
+    display: grid;
+    /* Use auto-fit to automatically adjust the number of columns based on available space*/
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--slate-200);
+    transition: border-color 0.3s ease;
+    /* Smooth fade effect */
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-hover);
+}
+
+.cardImageContainer {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: var(--slate-100);
+    /* Fallback background color while image loads */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 24px 24px 0 0;
+    /* Match the card's rounded corners */
+}
+
+.cardImageContainer img {
+    width: 60%;
+    height: 90%;
+    display: block;
+    /* Removes that weird bottom gap */
+    object-fit: contain;
+    /* Crops the image to fill the space without stretching */
+    object-position: center;
+    /* Ensures the middle of the photo stays visible */
+    border-radius: 12px;
+    /* Add some rounding to the image itself for a softer look */
+}
+
+.cardBody {
+    padding: 2rem;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.card p {
+    color: var(--slate-500);
+    margin-bottom: 1.5rem;
+}
+
+/* FOOTER */
+.footer {
+    background: var(--secondary);
+    /* Dark Navy*/
+    color: #94a3b8;
+    /* Slate-400 */
+    padding: 64px 0 48px;
+    position: relative;
+}
+
+/* container pattern */
+.footerContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* 4 cols */
+.footerGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+    .footerGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .footerGrid {
+        /* Brand (1.5) | Platform (1) | Support (1) | Newsletter (1.2) */
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 32px;
+    }
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Brand / Logo */
+.footerLogo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+}
+
+.footerLogoIcon {
+    width: 24px;
+    height: 24px;
+    color: var(--primary);
+    stroke-width: 2.5px;
+}
+
+.footerLogoText {
+    letter-spacing: -0.02em;
+}
+
+/* Text */
+.footerTextMuted {
+    color: #94a3b8;
+    /* Slate-400 */
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0 0 24px;
+    max-width: 320px;
+}
+
+/* Social row */
+.footerSocialLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.footerSocialLinks a {
+    color: #94a3b8;
+    transition: color 0.2s ease;
+}
+
+.footerSocialLinks a:hover {
+    color: var(--white);
+}
+
+.footerSocialLinks i {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2px;
+}
+
+
+/* Headings */
+.footerHeading {
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 24px;
+}
+
+.footerList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footerLink {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+    color: var(--white);
+}
+
+/* Newsletter (Input + Button side-by-side) */
+.footerNewsletter {
+    display: flex;
+    width: 100%;
+    max-width: 360px;
+}
+
+.footerNewsletterInput {
+    flex: 1;
+    min-width: 0;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: none;
+    padding: 12px 16px;
+    border-radius: 8px 0 0 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.footerNewsletterInput:focus {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.footerNewsletterInput::placeholder {
+    color: #64748b;
+    /* Slate-500 */
+}
+
+.footerNewsletterButton {
+    background: var(--primary);
+    color: var(--white);
+    border: 1px solid var(--primary);
+    border-radius: 0 8px 8px 0;
+    padding: 0 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.footerNewsletterButton:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.footerNewsletterButton i {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* Bottom bar */
+.footerBottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    font-size: 0.85rem;
+    color: var(--slate-500);
+}
+
+@media (min-width: 768px) {
+    .footerBottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.footerBottomLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+}
+
+.footerBottomLinks a {
+    color: var(--slate-400);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footerBottomLinks a:hover {
+    color: var(--white);
+}
+
+.cardLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.cardLink:hover {
+    color: var(--primary-hover);
+}
+
+.cardLink:hover .chevronIcon {
+    transform: translateX(4px);
+}
+
+.chevronIcon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
 }

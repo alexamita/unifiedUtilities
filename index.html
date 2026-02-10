@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensures the page is responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Utilities</title>
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <nav class="navBar">
+        <div class="navContentContainer">
+            <div class="siteLogo">
+                <div class="logoIcon">
+                    <!--Lucide icon for the logo-->
+                    <i data-lucide="bolt"></i>
+                </div>
+                <span class="logoText">Unified Utilities</span>
+            </div>
+            <div class="spacer">
+                <!-- This spacer pushes the nav links and button to the right -->
+                <div class="navLinks">
+                    <a href="features.html">Features</a>
+                    <a href="utilities.html">Utilities</a>
+                    <a href="howitworks.html">Overview</a>
+                </div>
+                <div><a href="login.html" class="btn btnOutline">Sign In</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="contentContainer">
+                <div class="heroContent">
+                    <div class="prototypeBadge">
+                        <span data-lucide="shield-check" class="heroBadgeIcon"></span>
+                        <span class="heroBadgeText">Unified Utilities Prototype</span>
+
+                    </div>
+                    <h1 class="heroTitle">Simplifying Kenyan<br>
+                        <span class="heroTitleNewline">Utility Payments.</span>
+                    </h1>
+                    <p class="heroSubtitle">One platform to manage all your electricity and water bills. Choose your
+                        account type below to access the dashboard.</p>
+                </div>
+
+                <div class="cardsGrid">
+                    <div class="card">
+                        <div class="cardImageContainer">
+                            <img src="assets/tenantImage.jpg" alt="Tenant">
+                        </div>
+                        <div class="cardBody">
+                            <h2>I am a Tenant</h2>
+                            <p>Buy tokens, pay your KPLC & water bills and sub-meter charges from a single dashboard.
+                            </p>
+                            <a href="login.html" class="accessButtonTenants cardLink">Access Dashboard <i
+                                    data-lucide="chevron-right" class="chevronIcon"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="cardImageContainer">
+                            <img src="assets/managerImage.jpg" alt="Property Manager">
+                        </div>
+                        <div class="cardBody">
+                            <h2>I am a Property Manager</h2>
+                            <p>Manage multiple units, reconcile sub-meter payments, and manage multiple units.</p>
+                            <a href="login.html?role=manager" class="accessButtonManager cardLink">Access Manager
+                                Portal <i data-lucide="chevron-right" class="chevronIcon"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="footerContainer">
+            <!-- Main content grid-->
+            <div class="footerGrid">
+                <!-- col.1: UTILPAY BRAND -->
+                <section class="footerColumn branding">
+                    <a class="footerLogo" href="index.html">
+                        <i data-lucide="bolt" class="footerLogoIcon"></i>
+                        <span class="footerLogoText">Unified Utilities</span>
+                    </a>
+
+                    <p class="footerTextMuted">
+                        The unified utility payments prototype.<br />
+                        Simplifying fragmented workflows for <br />
+                        electricity and water management in Kenya.
+                    </p>
+
+                    <div class="footerSocialLinks">
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                    </div>
+                </section>
+
+                <!-- col.2 PLATFORM -->
+                <nav class="footerColumn">
+                    <h3 class="footerHeading">PLATFORM</h3>
+                    <ul class="footerList">
+                        <li><a class="footerLink" href="features.html">Features</a></li>
+                        <li><a class="footerLink" href="utilities.html">Supported Utilities</a></li>
+                        <li><a class="footerLink" href="howitworks.html">Workflow</a></li>
+                        <li><a class="footerLink" href="apidocs.html">API Docs</a></li>
+                    </ul>
+                </nav>
+
+                <!-- col.3 SUPPORT -->
+                <nav class="footerColumn">
+                    <h3 class="footerHeading">SUPPORT</h3>
+                    <ul class="footerList">
+                        <li><a class="footerLink" href="help.html">Help Center</a></li>
+                        <li><a class="footerLink" href="status.html">Status</a></li>
+                        <li><a class="footerLink" href="contact.html">Contact Us</a></li>
+                        <li><a class="footerLink" href="security.html">Security</a></li>
+                    </ul>
+                </nav>
+
+                <!-- col.4 NEWSLETTER -->
+                <section class="footerColumn">
+                    <h3 class="footerHeading">NEWSLETTER</h3>
+                    <p class="footerTextMuted">Stay updated with our latest features.</p>
+
+                    <form class="footerNewsletter" action="#" method="post">
+                        <input class="footerNewsletterInput" id="newsletterEmail" type="email" placeholder="Enter email"
+                            autocomplete="email" required />
+                        <button class="footerNewsletterButton" type="submit"><i data-lucide="mail"></i></button>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="footerBottom">
+                <p>&copy; 2026 Unified Utilities Prototype. All data is simulated.</p>
+                <nav>
+                    <ul class="footerBottomLinks">
+                        <li><a class="footerLink" href="privacypolicy.html">Privacy Policy</a></li>
+                        <li><a class="footerLink" href="terms.html">Terms of Service</a></li>
+                        <li><a class="footerLink" href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <script>lucide.createIcons();</script>
+</body>
+
+</html>
