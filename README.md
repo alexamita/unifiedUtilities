@@ -1,7 +1,7 @@
 # Unified Utility Payments Platform
 **Frontend Prototype (In Progress)**
 
-A frontend-focused prototype for a **unified utility payments platform** that allows users to view and pay multiple utility bills—such as electricity and water—from a single dashboard.
+A frontend-focused prototype for a **unified utility payments platform** that allows users to view and pay multiple utility bills  mainly electricity and water from a single dashboard.
 
 > ⚠️ **Important:**
 > All data in this prototype is **simulated**.
