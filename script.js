@@ -1,21 +1,23 @@
 // Check for URL param ?role=manager
-const urlParams = new URLSearchParams(window.location.search);
-const roleParam = urlParams.get('role');
-if (roleParam === 'manager') {
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const roleParam = urlParams.get('role');
+  if (roleParam === 'manager') {
     setRole('manager');
-}
+  }
+});
 
 function setRole(role) {
-    const isManager = role === 'manager';
-    // Update Toggle UI
-    document.querySelectorAll('.roleButton').forEach(button => button.classList.remove('active'));
-    const buttonId = 'button' + role.charAt(0).toUpperCase() + role.slice(1);
-    const activeBtn = document.getElementById(buttonId);
+  const isManager = role === 'manager';
+  // Update Toggle UI
+  document.querySelectorAll('.roleButton').forEach(button => button.classList.remove('active'));
+  const buttonId = 'button' + role.charAt(0).toUpperCase() + role.slice(1);
+  const activeBtn = document.getElementById(buttonId);
 
-    if (activeBtn) activeBtn.classList.add('active');
+  if (activeBtn) activeBtn.classList.add('active');
 
-    //Page configs
-    const pages = [
+  //Page configs
+  const pages = [
     {
       wrapper: '#signUp.authPageWrapper', // Sign Up page wrapper
       titleId: 'signUpTitle',
@@ -44,7 +46,7 @@ function setRole(role) {
       },
     },
   ];
- // Apply role to any page elements
+  // Apply role to any page elements
   pages.forEach(page => {
     const wrapper = document.querySelector(page.wrapper);
     if (wrapper) {
@@ -63,42 +65,42 @@ function setRole(role) {
 
 // Function to set the method
 function setMethod(method) {
-    document.querySelectorAll('.methodTab').forEach(tab => tab.classList.remove('active'));
-    const tabId = 'tab' + method.charAt(0).toUpperCase() + method.slice(1);
-    document.getElementById(tabId).classList.add('active');
+  document.querySelectorAll('.methodTab').forEach(tab => tab.classList.remove('active'));
+  const tabId = 'tab' + method.charAt(0).toUpperCase() + method.slice(1);
+  document.getElementById(tabId).classList.add('active');
 
-    // Show/Hide Fields
-    if (method === 'email') {
-        document.getElementById('groupEmail').classList.remove('hidden');
-        document.getElementById('groupPhone').classList.add('hidden');
+  // Show/Hide Fields
+  if (method === 'email') {
+    document.getElementById('groupEmail').classList.remove('hidden');
+    document.getElementById('groupPhone').classList.add('hidden');
 
-        // Toggle Required
-        document.querySelector('#groupEmail input').setAttribute('required', '');
-        document.querySelector('#groupPhone input').removeAttribute('required');
-    } else {
-        document.getElementById('groupEmail').classList.add('hidden');
-        document.getElementById('groupPhone').classList.remove('hidden');
+    // Toggle Required
+    document.querySelector('#groupEmail input').setAttribute('required', '');
+    document.querySelector('#groupPhone input').removeAttribute('required');
+  } else {
+    document.getElementById('groupEmail').classList.add('hidden');
+    document.getElementById('groupPhone').classList.remove('hidden');
 
-        // Toggle Required
-        document.querySelector('#groupEmail input').removeAttribute('required');
-        document.querySelector('#groupPhone input').setAttribute('required', '');
-    }
+    // Toggle Required
+    document.querySelector('#groupEmail input').removeAttribute('required');
+    document.querySelector('#groupPhone input').setAttribute('required', '');
+  }
 }
 
 
 function togglePassword(button) {
-    const inputWrapper = button.parentElement;
-    const input = inputWrapper.querySelector('input');
-    const eye = button.querySelector('.icon-eye');
-    const eyeOff = button.querySelector('.icon-eye-off');
+  const inputWrapper = button.parentElement;
+  const input = inputWrapper.querySelector('input');
+  const eye = button.querySelector('.icon-eye');
+  const eyeOff = button.querySelector('.icon-eye-off');
 
-    if (input.type === 'password') {
-        input.type = 'text';
-        eye.classList.add('icon-hidden');
-        eyeOff.classList.remove('icon-hidden');
-    } else {
-        input.type = 'password';
-        eye.classList.remove('icon-hidden');
-        eyeOff.classList.add('icon-hidden');
-    }
+  if (input.type === 'password') {
+    input.type = 'text';
+    eye.classList.add('icon-hidden');
+    eyeOff.classList.remove('icon-hidden');
+  } else {
+    input.type = 'password';
+    eye.classList.remove('icon-hidden');
+    eyeOff.classList.add('icon-hidden');
+  }
 }
